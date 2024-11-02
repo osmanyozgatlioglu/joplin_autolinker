@@ -43,7 +43,7 @@ joplin.plugins.register({
 
 					//Else : make it:
 					if (idLinkedNote === 0){
-						const newNote = await joplin.data.post(['notes'], null, { body: "", title: selectedText});
+						const newNote = await joplin.data.post(['notes'], null, { body: "", title: selectedText, parent_id: currentNote.parent_id });
 						idLinkedNote = newNote.id
 					}
 
